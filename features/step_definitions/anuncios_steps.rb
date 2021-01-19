@@ -1,11 +1,8 @@
-Dado('que estou logado como {string} e {string}') do |email, senha|
+Dado('que estou logado como {string} e {string}') do |email, password|
   @email = email
 
-  login = LoginPage.new
-  login.abrir
-  login.campo_email.set email
-  login.campo_senha.set senha
-  login.botao_entrar
+  @login.open
+  @login.with(email, password)
 end
 
 Dado('que acesso o formulário de cadastro de equipamentos') do

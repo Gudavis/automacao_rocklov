@@ -1,13 +1,9 @@
-Dado('que acesso a página principal') do
-  visit "/"
+Dado('que acesso a página principal') do  
+  @login.open
 end
 
-Quando('submeto minhas credenciais {string} e {string}') do |email, senha|  
-  login = LoginPage.new
-  login.abrir
-  login.campo_email.set email
-  login.campo_senha.set senha
-  login.botao_entrar
+Quando('submeto minhas credenciais {string} e {string}') do |email, password|
+  @login.with(email, password)
 end
 
 Quando('submeto minhas credenciais') do |table|
