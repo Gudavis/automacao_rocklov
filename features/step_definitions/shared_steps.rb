@@ -1,6 +1,5 @@
 Então('sou redirecionado para o Dashboard') do
   expect(page).to have_css '.dashboard'
-  sleep 5 #temporarily
 end
 
 Então('vejo a mensagem de alerta: {string}') do |expect_alert|

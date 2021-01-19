@@ -9,8 +9,6 @@ Dado('que estou logado como {string} e {string}') do |email, senha|
 end
 
 Dado('que acesso o formulário de cadastro de equipamentos') do
-  sleep 5 #temp
-
   click_button "Criar anúncio"
   # checkpoint para garantir que foi para o local correto
   expect(page).to have_css "#equipoForm"
@@ -34,8 +32,6 @@ Quando('submeter o cadastro desse item') do
   find("input[placeholder^=Valor]").set @anuncio[:preco]
 
   click_button "Cadastrar"
-
-  sleep 5 #temp
 end
 
 Entao('devo ver esse item no meu dashboard') do
