@@ -1,4 +1,4 @@
-Dado('que estou logado como {string} e {string}') do |email, password|
+Dado('Login com {string} e {string}') do |email, password|
   @email = email
 
   @login.open
@@ -24,4 +24,8 @@ Entao('devo ver esse item no meu dashboard') do
   @dashboard.equipo_list
   expect(@dashboard.equipo_list).to have_content @anuncio[:nome]
   expect(@dashboard.equipo_list).to have_content "R$#{@anuncio[:preco]}/dia"
+end
+
+Então('deve conter a mensagem {string}') do |expect_alert|
+  expect(@alert.message).to have_text expect_alert
 end
