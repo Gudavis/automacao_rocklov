@@ -5,7 +5,7 @@ class EquiposPage
     page.has_css?("#equipoForm")
 
     upload(equipo[:thumb]) if equipo[:thumb].length > 0
-    
+
     # $ busca por valores que terminam com a palavra equipamento dentro do input
     find("input[placeholder$=equipamento]").set equipo[:nome]
     select_category(equipo[:categoria]) if equipo[:categoria].length > 0
