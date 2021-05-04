@@ -1,5 +1,3 @@
-require_relative "routes/sessions"
-
 describe "POST /sessions" do
   context "should create a new session" do
     before(:all) do
@@ -19,60 +17,7 @@ describe "POST /sessions" do
     end
   end
 
-  examples = [
-    {
-      title: "invalid password",
-      payload: {
-        email: "davis@gmail.com",
-        password: "pwd12345",
-      },
-      code: 401,
-      error: "Unauthorized",
-    },
-    {
-      title: "invalid email",
-      payload: {
-        email: "404@gmail.com",
-        password: "pwd12345",
-      },
-      code: 401,
-      error: "Unauthorized",
-    },
-    {
-      title: "blank email field",
-      payload: {
-        email: "",
-        password: "pwd12345",
-      },
-      code: 412,
-      error: "required email",
-    },
-    {
-      title: "removed email field",
-      payload: {
-        password: "pwd12345",
-      },
-      code: 412,
-      error: "required email",
-    },
-    {
-      title: "blank password field",
-      payload: {
-        email: "davis@gmail.com",
-        password: "",
-      },
-      code: 412,
-      error: "required password",
-    },
-    {
-      title: "removed password field",
-      payload: {
-        email: "davis@gmail.com",
-      },
-      code: 412,
-      error: "required password",
-    },
-  ]
+  examples = Helpers::get_fixture("login")
 
   examples.each do |example|
     context "should not create a new session with #{example[:title]}" do

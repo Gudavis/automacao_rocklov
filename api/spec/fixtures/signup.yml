@@ -1,0 +1,46 @@
+- title: without name
+  payload:
+    name: 
+    email: teste@gmail.com
+    password: pwd12345
+  code: 412
+  error: required name
+- title: without name field
+  payload:
+    email: teste@gmail.com
+    password: pwd12345
+  code: 412
+  error: required name
+- title: with wrong email
+  payload:
+    name: Teste
+    email: teste#gmail.com
+    password: pwd12345
+  code: 412
+  error: wrong email
+- title: without email
+  payload:
+    name: Teste
+    email: 
+    password: pwd12345
+  code: 412
+  error: required email
+- title: without email field
+  payload:
+    name: Teste
+    password: pwd12345
+  code: 412
+  error: required email
+- title: without password
+  payload:
+    name: Teste
+    email: teste@gmail.com
+    password:
+  code: 412
+  error: required password
+- title: without password field
+  payload:
+    name: Teste
+    email: teste@gmail.com
+  code: 412
+  error: required password
