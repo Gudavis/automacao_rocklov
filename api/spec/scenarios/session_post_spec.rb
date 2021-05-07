@@ -2,7 +2,7 @@ describe "POST /sessions" do
   context "should create a new session" do
     before(:all) do
       payload = {
-        email: "davis@gmail.com",
+        email: "beto@gmail.com",
         password: "pwd123",
       }
       @response = Session.new.login(payload)

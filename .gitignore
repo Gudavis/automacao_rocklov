@@ -2,3 +2,4 @@ logs/*.log
 *.log
 /logs
 web/logs
+api/logs
